@@ -96,7 +96,7 @@ const Login = () => {
             <p className="errorMsg">{formErros.password}</p>
             <button className="submitButton">登録</button>
             {Object.keys(formErros).length === 0 && isSubmit && (
-              <div className="msgOk">ログインに成功しました </div>
+              <div className="msgOk">ログインに成功しました <a href='/mypage'>マイページへ</a></div>
             )}
           </div>
         </form>
