@@ -12,7 +12,6 @@ const Home = () => {
 
   return (
     <>
-    {/* <Header /> */}
     <section>
       <header>
         <h1 className="logo">Trip Memory</h1>

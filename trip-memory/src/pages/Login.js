@@ -34,7 +34,7 @@ const Login = () => {
           <button>ログイン</button>
         </div>
         <div>
-          ユーザ登録は<Link to={'/signup'}>こちら</Link>から
+          ユーザ登録は<Link to={'/signup'}>こちら</Link>
         </div>
       </form>
     </div>
