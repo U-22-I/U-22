@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -13,6 +14,7 @@ const SignUp = () => {
       await createUserWithEmailAndPassword(auth, email.value, password.value);
     } catch (error) {
       console.log(error);
+      setError(error.message);
     }
   };
   const handleChangeEmail = (event) => {
@@ -25,6 +27,7 @@ const SignUp = () => {
   return (
     <div>
       <h1>ユーザ登録</h1>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <div>
           <label>メールアドレス</label>
