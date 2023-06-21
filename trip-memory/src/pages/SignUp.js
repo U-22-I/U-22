@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { auth } from '../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/SignUp.css'
 import Video from '../components/Video';
 
@@ -9,11 +9,14 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const { email, password } = event.target.elements;
       await createUserWithEmailAndPassword(auth, email.value, password.value);
+      alert('登録に成功しました。')
+      navigate('/Login')
     } catch (error) {
       console.log(error);
       setError(error.message);
