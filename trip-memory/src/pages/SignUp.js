@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { auth } from '../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { Link } from 'react-router-dom';
+import '../styles/SignUp.css'
+import Video from '../components/Video';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
@@ -25,10 +27,11 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <h1>ユーザ登録</h1>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <form onSubmit={handleSubmit}>
+    <div className="container">
+      <div className="form">
+        <h1>ユーザ登録</h1>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+        <form onSubmit={handleSubmit}>
         <div>
           <label>メールアドレス</label>
           <input
@@ -50,10 +53,12 @@ const SignUp = () => {
         <div>
           <button>登録</button>
         </div>
-        <div>
-            ログインは<Link to={'/login'}>こちら</Link>
+        </form>
+        <div className="login-link">
+          ログインは<Link to="/login">こちら</Link>
         </div>
-      </form>
+      </div>
+      <Video />
     </div>
   );
 };
