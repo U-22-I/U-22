@@ -7,6 +7,7 @@ const Mypage = () => {
   const handleLogout = () => {
     auth.signOut();
     navigate('/login', { replace: true });
+    alert('ログアウトに成功しました。')
   };
   return (
     <div>
