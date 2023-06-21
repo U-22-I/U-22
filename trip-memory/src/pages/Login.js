@@ -11,7 +11,7 @@ const Login = () => {
 
     try {
       await signInWithEmailAndPassword(auth, email.value, password.value);
-      navigate('/top'); // ログイン成功時に /top にリダイレクト
+      navigate('/Mypage'); // ログイン成功時に /top にリダイレクト
     } catch (error) {
       console.log(error);
       // ログインエラーの処理を追加する場合はここに記述
