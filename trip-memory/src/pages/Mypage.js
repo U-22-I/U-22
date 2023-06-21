@@ -1,3 +1,4 @@
+import Header from '../components/Header';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,7 +10,7 @@ const Mypage = () => {
   };
   return (
     <div>
-      <h1>ホームページ</h1>
+      <Header />
       <button onClick={handleLogout}>ログアウト</button>
     </div>
   );
