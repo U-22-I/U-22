@@ -1,6 +1,7 @@
 import React from 'react'
 import '../styles/Inquiry.css'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 const Inquiry = () => {
   return (
@@ -25,6 +26,7 @@ const Inquiry = () => {
     </div>
         <input type="submit" class="Form-Btn" value="送信する" />
     </div>
+    <Footer />
     </>
   )
 }

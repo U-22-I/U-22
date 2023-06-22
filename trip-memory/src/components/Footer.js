@@ -26,7 +26,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className='footer_navi'>
-                    <p class="footer__navi-heading">navigation</p>
+                    <p class="footer__navi-heading">NAVIGATION</p>
                     <ul class="footer__navi">
                         <li><a className='footer_a' href="/top">マップ</a></li>
                         <li><a className='footer_a' href="/mission">ミッション</a></li>
