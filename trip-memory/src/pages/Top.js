@@ -1,8 +1,14 @@
 import React from 'react'
+import Header from '../components/Header'
 
 const Top = () => {
   return (
-    <div>Mypage</div>
+    <>
+    <Header />
+    <div>
+      Toppage
+    </div>
+    </>
   )
 }
 

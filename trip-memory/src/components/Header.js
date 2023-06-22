@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Header = () => {
   return (
     <div class="header" style={{
-        borderBottom: 'thick double #32a1ce',
+        borderBottom: 'thick double #333',
         display: 'flex',
         height: '80px',
         alignItems: 'center',

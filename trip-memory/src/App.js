@@ -8,6 +8,7 @@ import { AuthProvider } from "./context/AuthContext";
 import Top from "./pages/Top";
 import Inquiry from "./pages/Inquiry";
 import Mission from "./pages/Mission";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -22,8 +23,10 @@ function App() {
           <Route path="/inquiry" element={ <Inquiry /> } />
           <Route path="/mission" element={ <Mission /> } />
         </Routes>
+        <Footer />
       </div>
     </AuthProvider>
+    
   );
 }
 
