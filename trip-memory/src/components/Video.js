@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from "react";
 
 const Video = () => {
   const videoRef = useRef(null);
@@ -11,19 +11,19 @@ const Video = () => {
 
   return (
     <video
-      className='nohome'
+      className="nohome"
       ref={videoRef}
-      src={process.env.PUBLIC_URL + '/home.mp4'}
+      src={process.env.PUBLIC_URL + "/home.mp4"}
       autoPlay
       loop
       muted
       style={{
-        position: 'absolute',
+        position: "absolute",
         top: 0,
         left: 0,
-        width: '100%',
-        height: '100%',
-        objectFit: 'cover'
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
       }}
     ></video>
   );

@@ -2,7 +2,6 @@ import Header from "../components/Header";
 import React, { useEffect, useState, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import MapboxLanguage from "@mapbox/mapbox-gl-language";
-
 const Top = () => {
   const [lng, setLng] = useState(139.4534);
   const [lat, setLat] = useState(35.4548);
@@ -49,6 +48,7 @@ const Top = () => {
   return (
     <>
       <Header />
+
       <div>
         <div>
           <div className="sidebar">
