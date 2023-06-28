@@ -1,17 +1,15 @@
-import React from 'react'
-import Header from '../components/Header'
+import React from "react";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const Top = () => {
   return (
     <>
-    <Header />
-    <div>
-      Toppage
-    </div>
-    <Footer />
+      <Header />
+      <div>Toppage</div>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Top
+export default Top;

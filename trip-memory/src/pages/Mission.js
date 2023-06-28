@@ -1,15 +1,16 @@
-import React from 'react'
-import Header from '../components/Header'
+import React from "react";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ToDoApp from "../components/ToDoApp";
 
 const Mission = () => {
   return (
     <>
-    <Header />
-    <div>Mission</div>
-    <Footer />
+      <Header />
+      <ToDoApp />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Mission
+export default Mission;
