@@ -3,9 +3,9 @@ import React, { useEffect, useState, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import MapboxLanguage from "@mapbox/mapbox-gl-language";
 const Top = () => {
-  const [lng, setLng] = useState(139.4534);
-  const [lat, setLat] = useState(35.4548);
-  const [zoom, setZoom] = useState(12);
+  const [lng, setLng] = useState(136.8783);
+  const [lat, setLat] = useState(35.1713);
+  const [zoom, setZoom] = useState(15);
   const mapContainer = useRef(null);
   const map = useRef(null);
 
@@ -36,7 +36,7 @@ const Top = () => {
     return () => {
       map.current.remove();
     };
-  }, [lng, lat]);
+  }, []);
 
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize
@@ -48,15 +48,28 @@ const Top = () => {
   return (
     <>
       <Header />
-
-      <div>
-        <div>
-          <div className="sidebar">
-            Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
-          </div>
+      <div
+        className="map-body"
+        style={{ display: "flex", width: "100%", height: "100vh" }}
+      >
+        <div
+          className="xyz"
+          style={{
+            position: "absolute",
+            top: "80px",
+            left: 0,
+            backgroundColor: "rgba(255, 255, 255, 0.7)",
+            padding: "10px 20px",
+          }}
+        >
+          Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
         </div>
+        <div
+          className="map"
+          ref={mapContainer}
+          style={{ width: "100%", height: "100%" }}
+        ></div>
       </div>
-      <div ref={mapContainer} style={{ height: "400px" }}></div>
     </>
   );
 };
