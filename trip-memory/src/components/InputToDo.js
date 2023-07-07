@@ -17,11 +17,11 @@ export const InputToDo = (props) => {
   };
 
   return (
-    <div className="panel-block">
+    <div className="panel-input">
       <input
         class="input"
         type="text"
-        placeholder="Enter to add"
+        placeholder="目標を入力"
         value={text}
         onChange={handleChange}
         onKeyPress={handleEnter}

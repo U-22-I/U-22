@@ -15,21 +15,21 @@ export const Filter = (props) => {
         onClick={handleClick.bind(null, "ALL")}
         className={classNames({ "is-active": value === "ALL" })}
       >
-        All
+        全て表示
       </a>
       <a
         href="#"
         onClick={handleClick.bind(null, "TODO")}
         className={classNames({ "is-active": value === "TODO" })}
       >
-        ToDo
+        未達成
       </a>
       <a
         href="#"
         onClick={handleClick.bind(null, "DONE")}
         className={classNames({ "is-active": value === "DONE" })}
       >
-        Done
+        達成済
       </a>
     </div>
   );

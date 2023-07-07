@@ -1,16 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { RecoilState, useRecoilState } from "recoil";
+import { ModalState } from "../hooks/modal";
 
 const Header = () => {
+  const [viewModal, setViewModal] = useRecoilState(ModalState);
+  const showModal = () => {
+    if (!viewModal) {
+      setViewModal(true);
+    }
+  };
   return (
     <div
       class="header"
       style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 999,
         borderBottom: "thick double #333",
         display: "flex",
         height: "80px",
         alignItems: "center",
         padding: "0 30px",
+        background: "#fff",
       }}
     >
       <h1>Trip Memory</h1>
@@ -22,12 +36,12 @@ const Header = () => {
             </Link>
           </li>
           <li style={{ marginLeft: "30px" }}>
-            <Link
+            <div
               style={{ textDecoration: "none", color: "#000" }}
-              to="/mission"
+              onClick={showModal}
             >
               ミッション
-            </Link>
+            </div>
           </li>
           <li style={{ marginLeft: "30px" }}>
             <Link

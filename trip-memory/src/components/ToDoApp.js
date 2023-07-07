@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import InputToDo from "./InputToDo";
 import Filter from "./Filter";
 import ToDo from "./ToDo";
+import "../styles/ToDoApp.css";
+import { useRecoilState } from "recoil";
+import { ModalState } from "../hooks/modal";
 
 export const ToDoApp = () => {
+  const [viewModal, setViewModal] = useRecoilState(ModalState);
+
   // ランダムなキーを取得
   const getKey = () => Math.random().toString(32).substring(2);
   // stateを作成
@@ -32,15 +37,25 @@ export const ToDoApp = () => {
     });
     setToDos(newToDos);
   };
+
+  const CloseModal = () => {
+    if (viewModal) {
+      setViewModal(false);
+    }
+  };
   return (
-    <div className="panel is-warning">
-      <div className="panel-heading">ToDo</div>
-      <InputToDo onAdd={handleAdd} />
-      <Filter onChange={handleFilterChange} value={filter} />
-      {displayToDos.map((todo) => (
-        <ToDo key={todo.key} todo={todo} onCheck={handleCheck} />
-      ))}
-      <div className="panel-block">{displayToDos.length} todos</div>
+    <div className="modal" onClick={CloseModal}>
+      <div className="panel is-warning">
+        <div className="panel-heading">MISSION</div>
+        <div className="panel-header">
+          <InputToDo onAdd={handleAdd} />
+          <Filter onChange={handleFilterChange} value={filter} />
+        </div>
+        {displayToDos.map((todo) => (
+          <ToDo key={todo.key} todo={todo} onCheck={handleCheck} />
+        ))}
+        <div className="panel-done">目標数：{displayToDos.length}</div>
+      </div>
     </div>
   );
 };

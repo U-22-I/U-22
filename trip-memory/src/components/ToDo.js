@@ -9,7 +9,6 @@ export const ToDo = (props) => {
   };
   return (
     <label className="panel-block">
-      <input type="checkbox" checked={todo.done} onChange={handleChange} />
       <span
         className={classNames({
           "has-text-grey-light": todo.done,
@@ -17,6 +16,7 @@ export const ToDo = (props) => {
       >
         {todo.text}
       </span>
+      <input type="checkbox" checked={todo.done} onChange={handleChange} />
     </label>
   );
 };

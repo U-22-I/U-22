@@ -2,7 +2,12 @@ import Header from "../components/Header";
 import React, { useEffect, useState, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import MapboxLanguage from "@mapbox/mapbox-gl-language";
+import { useRecoilValue } from "recoil";
+import { ModalState } from "../hooks/modal";
+import ToDoApp from "../components/ToDoApp";
 const Top = () => {
+  const viewModal = useRecoilValue(ModalState);
+
   const [lng, setLng] = useState(136.8783);
   const [lat, setLat] = useState(35.1713);
   const [zoom, setZoom] = useState(15);
@@ -50,13 +55,17 @@ const Top = () => {
       <Header />
       <div
         className="map-body"
-        style={{ display: "flex", width: "100%", height: "100vh" }}
+        style={{
+          display: "flex",
+          width: "100%",
+          height: "100vh",
+          position: "relative",
+        }}
       >
         <div
           className="xyz"
           style={{
             position: "absolute",
-            top: "80px",
             left: 0,
             backgroundColor: "rgba(255, 255, 255, 0.7)",
             padding: "10px 20px",
@@ -69,6 +78,8 @@ const Top = () => {
           ref={mapContainer}
           style={{ width: "100%", height: "100%" }}
         ></div>
+
+        {viewModal && <ToDoApp />}
       </div>
     </>
   );
