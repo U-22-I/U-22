@@ -44,9 +44,12 @@ export const ToDoApp = () => {
     }
   };
   return (
-    <div className="modal" onClick={CloseModal}>
+    <div className="modal">
       <div className="panel is-warning">
-        <div className="panel-heading">MISSION</div>
+        <div className="panel-heading">
+          <h2>MISSION</h2>
+          <p onClick={CloseModal}>×</p>
+        </div>
         <div className="panel-header">
           <InputToDo onAdd={handleAdd} />
           <Filter onChange={handleFilterChange} value={filter} />
