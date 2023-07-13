@@ -35,6 +35,13 @@
   display: block;
 }
 
+.modal-header {
+  background: #fff;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+
 .panel-heading {
   display: flex;
 }
@@ -53,6 +60,25 @@
   align-items: center;
 }
 
+.todolist {
+  height: 87%;
+  overflow-y: scroll;
+}
+
+.todolist::-webkit-scrollbar {
+  /* display: none; */
+}
+.todolist::-webkit-scrollbar {
+  width: 10px;
+}
+.todolist::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+.todolist::-webkit-scrollbar-thumb {
+  background-color: #666;
+  border-radius: 5px;
+}
+
 .panel-input {
   padding: 10px 0;
 }
@@ -68,4 +94,5 @@
   right: 50px;
   font-size: 1.3rem;
   color: red;
+  background: rgba(255, 255, 255, 0.6);
 }

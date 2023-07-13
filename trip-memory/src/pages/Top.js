@@ -66,6 +66,7 @@ const Top = () => {
           className="xyz"
           style={{
             position: "absolute",
+            top: "80px",
             left: 0,
             backgroundColor: "rgba(255, 255, 255, 0.7)",
             padding: "10px 20px",

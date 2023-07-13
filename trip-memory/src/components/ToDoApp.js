@@ -46,17 +46,21 @@ export const ToDoApp = () => {
   return (
     <div className="modal">
       <div className="panel is-warning">
-        <div className="panel-heading">
-          <h2>MISSION</h2>
-          <p onClick={CloseModal}>×</p>
+        <div className="modal-header">
+          <div className="panel-heading">
+            <h2>MISSION</h2>
+            <p onClick={CloseModal}>×</p>
+          </div>
+          <div className="panel-header">
+            <InputToDo onAdd={handleAdd} />
+            <Filter onChange={handleFilterChange} value={filter} />
+          </div>
         </div>
-        <div className="panel-header">
-          <InputToDo onAdd={handleAdd} />
-          <Filter onChange={handleFilterChange} value={filter} />
+        <div className="todolist">
+          {displayToDos.map((todo) => (
+            <ToDo key={todo.key} todo={todo} onCheck={handleCheck} />
+          ))}
         </div>
-        {displayToDos.map((todo) => (
-          <ToDo key={todo.key} todo={todo} onCheck={handleCheck} />
-        ))}
         <div className="panel-done">目標数：{displayToDos.length}</div>
       </div>
     </div>
